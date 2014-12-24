@@ -1,0 +1,24 @@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@title</title>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+  </head>
+  <body>
+	<header class="top">
+	  header
+	</header>
+	<div class="menu">
+	  meniu
+	</div>
+	
+	<div class="container">
+      @content
+	</div>
+	
+	<footer class="bottom">
+	  footer
+	</footer>
+  </body>
+</html>
