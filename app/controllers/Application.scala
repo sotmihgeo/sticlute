@@ -3,10 +3,16 @@ package controllers
 import play.api._
 import play.api.mvc._
 
+import models.User
+import common.Global
+
 object Application extends Controller {
 
   def index = Action {
-    Ok(views.html.index("Buhuhuuuuhhhuhuhuuh"))
+    //ar trebui sa initializez userul global
+    Global.connectedUser = User("micky.sotirca@gmail.com", "", false, true)
+    
+    Ok(views.html.index("Colectie de sticlute mickyshor.ro", Global.connectedUser))
   }
 
 }

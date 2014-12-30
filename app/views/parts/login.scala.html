@@ -1,0 +1,39 @@
+@(connectedUser: models.User)
+
+<div class="Login">
+    @if(!connectedUser.connected) {
+    <div class="morph-login">
+        <button type="button">Login</button>
+        <div class="morph-login-content">
+            <span class="icon icon-close">Close the dialog</span>
+            <h2>Login</h2>
+            <form>
+                <p>
+                    <labe>Email</labe>
+                    <input type="text" />
+                </p>
+                <p>
+                    <label>Password</label>
+                    <input type="password" />
+                </p>
+                <p>
+                    <button>Login</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    } else {
+    <div class="logout-wrapper">
+        <form>
+            <span>[@connectedUser.username]</span>
+            <input type="submit" class="logout-link" value="Logout">
+            /* .logout-link { 
+                 background-color: transparent; 
+                 text-decoration: underline; 
+                 border: none; 
+                 color: blue; 
+                 cursor: pointer; } */
+        </form>
+    </div>
+    }
+</div>

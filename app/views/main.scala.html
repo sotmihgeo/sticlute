@@ -1,24 +1,159 @@
-@(title: String)(content: Html)
+@(title: String, connectedUser: models.User)(content: Html)
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>@title</title>
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-  </head>
-  <body>
-	<header class="top">
-	  header
-	</header>
-	<div class="menu">
-	  meniu
-	</div>
-	
-	<div class="container">
-      @content
-	</div>
-	
-	<footer class="bottom">
-	  footer
-	</footer>
-  </body>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+</head>
+
+<body>
+    <header class="top">
+        <!-- zona de login -->
+        @parts.login(connectedUser)
+        <!-- social media si search -->
+        <div>
+            <div class="search">
+                <form>
+                    <div class="search-input-wrap">
+                        <input class="search-input" placeholder="Cauta sticluta..." type="text" value="" name="s" id="s">
+                    </div>
+                    <input class="search-submit" type="submit" id="go" value="">
+                    <span class="search-icon"></span>
+                </form>
+            </div>
+            <ul class="connect">
+                <li>
+                    <a class="connect-icon-feed" href=""><span>Rss Feed</span></a>
+                </li>
+                <li>
+                    <a class="connect-icon-email" href=""><span>Email Updates</span></a>
+                </li>
+                <li>
+                    <a class="connect-icon-twitter" href=""><span>Sticlute pe Twitter</span></a>
+                </li>
+                <li>
+                    <a class="connect-icon-facebook" href=""><span>Sticlute pe Facebook</span></a>
+                </li>
+                <li>
+                    <a class="connect-icon-google-plus" href=""><span>Sticlute pe Google+</span></a>
+                </li>
+                <li>
+                    <a class="connect-icon-githib" href=""><span>Sticlute pe GitHub</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Un text -->
+        <div><span>Colectie de miniaturi</span>
+        </div>
+    </header>
+    <div class="menu">
+        <div class="branding">
+            <a class="logo" href="/" rel="home">Sticlute</a>
+        </div>
+        <div class="hsmenu">
+            <nav class="cbp-hsmenu-wrapper">
+                <div class="cbp-hsinner">
+                    <ul class="cbp-hsmenu">
+                        <li>
+                            <a href="/">Colectie</a>
+                            <ul class="cbp-hssubmenu cbp-hssub-rows">
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/wine.png")" alt="Vin" />
+                                        <span>Vin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/whiskey.png")" alt="Whiskey" />
+                                        <span>Whiskey</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/bourbon.png")" alt="Bourbon" />
+                                        <span>Bourbon</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/scotch.png")" alt="Scotch" />
+                                        <span>Scotch</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/cognac.png")" alt="Cognac" />
+                                        <span>Cognac</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/brandy.png")" alt="Brandy" />
+                                        <span>Brandy</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/gin.png")" alt="Gin" />
+                                        <span>Gin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/rom.png")" alt="Rom" />
+                                        <span>Rom</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/tequila.png")" alt="Tequila" />
+                                        <span>Tequila</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/vodka.png")" alt="Vodka" />
+                                        <span>Vodka</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/liquor.png")" alt="Liquor" />
+                                        <span>Liquor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="@routes.Assets.at("images/altele.png")" alt="Altele" />
+                                        <span>Altele</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/">Favorite</a>
+                        </li>
+                        <li>
+                            <a href="/">Linkuri</a>
+                        </li>
+                        <li>
+                            <a href="/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        @content
+    </div>
+
+    <footer class="bottom">
+        mickyshor.ro
+    </footer>
+</body>
+
 </html>
