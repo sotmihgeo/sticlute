@@ -24,7 +24,7 @@ html {
 .top {
     position: relative;
     z-index: 1;
-    background: #fff;
+    background: rgba(255, 255, 0, 0.2);
     /* height: 30px; */
     border-top: 5px solid #de61fd;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
