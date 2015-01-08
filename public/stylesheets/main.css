@@ -30,3 +30,31 @@ html {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+.Login {
+    margin: 5px 10px;
+    width: 100px;
+    float: right;
+    background: rgba(255, 255, 0, 0.4);
+    border: 1px solid #de61fd;
+}
+.search-connect {
+    margin: 5px 5px;
+    width: 322px;
+    float: right;
+    background: rgba(255, 255, 0, 0.4);
+    border: 1px solid #de61fd;
+}
+.search {
+    position: relative;
+    float: right;
+    width: 34px;
+    height: 34px;
+    z-index: 100000;
+}
+.connect {
+    width: 252px;
+    float: right;
+    margin-right: 34px;
+    padding: 0px;
+}
