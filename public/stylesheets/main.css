@@ -1,3 +1,32 @@
+@font-face {
+    font-family: "Across the Road";
+    src: url("fonts/Across the Road.ttf");
+}
+@font-face {
+    font-family: 'socicon';
+    src: url('fonts/socicon-webfont.eot');
+    src: url('fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/socicon-webfont.woff') format('woff'),
+         url('fonts/socicon-webfont.woff2') format('woff2'),
+         url('fonts/socicon-webfont.ttf') format('truetype'),
+         url('fonts/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    text-transform: initial;
+}
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?i6iqih');
+	src:url('fonts/icomoon.eot?#iefixi6iqih') format('embedded-opentype'),
+		url('fonts/icomoon.woff?i6iqih') format('woff'),
+		url('fonts/icomoon.ttf?i6iqih') format('truetype'),
+		url('fonts/icomoon.svg?i6iqih#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
 *,
 *:after,
 *:before {
@@ -7,7 +36,11 @@
 }
 body,
 html {
-    font-size: 100%;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
     padding: 0;
     margin: 0;
 }
@@ -30,31 +63,267 @@ html {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+.top-inner {
+    padding: 0px 20px;
+    padding-top: 5px;
+    position: relative;
+    max-width: 1360px;
+    margin: 0 auto;
+}
 
 .Login {
     margin: 5px 10px;
+    margin-right: 0px;
     width: 100px;
     float: right;
     background: rgba(255, 255, 0, 0.4);
     border: 1px solid #de61fd;
 }
 .search-connect {
-    margin: 5px 5px;
-    width: 322px;
-    float: right;
-    background: rgba(255, 255, 0, 0.4);
-    border: 1px solid #de61fd;
-}
-.search {
-    position: relative;
-    float: right;
-    width: 34px;
+    margin: 0px 5px;
+    width: 290px;
     height: 34px;
-    z-index: 100000;
+    float: right;
+    overflow: hidden;
+    /*background: rgba(255, 255, 0, 0.4);*/
+}
+.sb-search {
+    position: relative;
+    width: 0%;
+    min-width: 28px;
+    height: 28px;
+    float: right;
+    overflow: hidden;
+    
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    
+    -webkit-backface-visibility: hidden;
+}
+.sb-search-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #de61fd;
+    outline: none;
+    background: #fff;
+    width: 100%;
+    height: 28px;
+    margin: 0;
+    z-index: 10;
+    padding: 9px 33px 5px 5px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #000;
+}
+input[type="search"].sb-search-input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+.sb-search-input::-webkit-input-placeholder {
+    color: #de61fd;
+} 
+.sb-search-input:-moz-placeholder {
+    color: #de61fd;
+}
+.sb-search-input::-moz-placeholder {
+    color: #de61fd;
+} 
+.sb-search-input:-ms-input-placeholder {
+    color: #de61fd;
+}
+.sb-icon-search, .sb-search-submit {
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+}
+.sb-search-submit {
+    background: #fff; /* IE needs this */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: -1;
+}
+.sb-icon-search {
+    color: #fff;
+    background: #de61fd;
+    z-index: 90;
+    font-family: "icomoon";
+    font-size: 18px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+.sb-icon-search:before{
+    content: "\e986";
+}
+.sb-search.sb-search-open, .no-js .sb-search {
+    width: 100%;
+}
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+    background: #de61fd;
+    color: #fff;
+    z-index: 11;
+}
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+    z-index: 90;
 }
 .connect {
-    width: 252px;
+    width: 250px;
     float: right;
-    margin-right: 34px;
+    margin: 0;
     padding: 0px;
+    padding-top: 7px;
+    height: 27px;
+    list-style: none;
+}
+.connect li {
+    float: left;
+}
+.connect li a {
+    display: block;
+	width: 34px;
+	height: 20px;
+	margin: 0;
+	position: relative;
+	text-align: center;
+    color: #694B73;
+    text-decoration: none;
+    /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.connect li a span {
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	display: none;
+}
+.connect-icon {
+  /*color: #de61fd;*/
+  font-family: 'socicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*padding-top: 6px;*/
+}
+.connect-icon-hover:hover {
+  color: #de61fd;
+}
+.connect-icon-feed:before {
+    color: rgba(242, 97, 9, 0.25); /* #f26109; */
+    content: ",";
+    /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+/*.connect-icon-feed:hover:before {
+    color: #de61fd;
+}*/
+.connect-icon-email:before {
+    color: #e6af17;
+    content: "@";
+    /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.connect-icon-email:hover:before {
+    color: #de61fd;
+}
+.connect-icon-twitter:before {
+    color: #4da7de;
+    content: "a"; 
+     /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.connect-icon-twitter:hover:before {
+    color: #de61fd;
+}
+.connect-icon-facebook:before {
+    color: #3e5b98;
+    content: "b";
+     /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.connect-icon-facebook:hover:before {
+    color: #de61fd;
+}
+.connect-icon-google-plus:before {
+    color: #d93e2d;
+    content: "c";
+    /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.connect-icon-google-plus:hover:before {
+    color: #de61fd;
+}
+.connect-icon-github:before {
+    color: #5f5f5f; /* #221e1b; */
+    content: "Q";
+    /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.connect-icon-github:hover:before {
+    color: #de61fd;
+}
+.top-logo-text {
+    font-family: "Across the Road";
+	font-weight: 500;
+	font-style: normal;
+	font-size: 28px;
+    letter-spacing:2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    float: left;
+    width: 185px;
 }

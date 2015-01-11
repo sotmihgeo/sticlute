@@ -4,50 +4,55 @@
 
 <head>
     <title>@title</title>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel='stylesheet' media='screen' href='@routes.Assets.at("stylesheets/main.css")'>
+    <script src='@routes.Assets.at("javascripts/main.js")' type='text/javascript'></script>
 </head>
 
 <body>
     <header class="top">
-        <!-- zona de login -->
-        @parts.login(connectedUser)
-        <!-- social media si search -->
-        <div class="search-connect">
-            <div class="search">
-                <form>
-                    <div class="search-input-wrap">
-                        <input class="search-input" placeholder="Cauta sticluta..." type="text" value="" name="s" id="s">
-                    </div>
-                    <input class="search-submit" type="submit" id="go" value="">
-                    <span class="search-icon"></span>
-                </form>
+        <div class="top-inner">
+            <!-- zona de login -->
+            @parts.login(connectedUser)
+            <!-- social media si search -->
+            <div class="search-connect">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Cauta sticluta..." type="search" value="" name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"></span>
+                    </form>
+                </div>
+                <script src='@routes.Assets.at("javascripts/search.js")' type='text/javascript'></script>
+                <script>
+			        new UISearch( document.getElementById( 'sb-search' ) );
+		        </script>
+                <ul class="connect">
+                    <li>
+                        <a class="connect-icon connect-icon-feed"><span>Rss Feed</span></a>
+                    </li>
+                    <li>
+                        <a class="connect-icon connect-icon-hover connect-icon-email" href=""><span>Email Updates</span></a>
+                    </li>
+                    <li>
+                        <a class="connect-icon connect-icon-hover connect-icon-twitter" href=""><span>Sticlute pe Twitter</span></a>
+                    </li>
+                    <li>
+                        <a class="connect-icon connect-icon-hover connect-icon-facebook" href=""><span>Sticlute pe Facebook</span></a>
+                    </li>
+                    <li>
+                        <a class="connect-icon connect-icon-hover connect-icon-google-plus" href=""><span>Sticlute pe Google+</span></a>
+                    </li>
+                    <li>
+                        <a class="connect-icon connect-icon-hover connect-icon-github" href=""><span>Sticlute pe GitHub</span></a>
+                    </li>
+                </ul>
             </div>
-            <ul class="connect">
-                <li>
-                    <a class="connect-icon-feed" href=""><span>Rss Feed</span></a>
-                </li>
-                <li>
-                    <a class="connect-icon-email" href=""><span>Email Updates</span></a>
-                </li>
-                <li>
-                    <a class="connect-icon-twitter" href=""><span>Sticlute pe Twitter</span></a>
-                </li>
-                <li>
-                    <a class="connect-icon-facebook" href=""><span>Sticlute pe Facebook</span></a>
-                </li>
-                <li>
-                    <a class="connect-icon-google-plus" href=""><span>Sticlute pe Google+</span></a>
-                </li>
-                <li>
-                    <a class="connect-icon-githib" href=""><span>Sticlute pe GitHub</span></a>
-                </li>
-            </ul>
-        </div>
-        <!-- Un text -->
-        <div><span>Colectie de miniaturi</span>
+            <!-- Un text -->
+            <div class="top-logo-text"><span>Colectie de miniaturi</span>
+            </div>
         </div>
     </header>
-    
+
     <!-- meniul -->
     @parts.menu(connectedUser)
 
