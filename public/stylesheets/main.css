@@ -3,6 +3,42 @@
     src: url("fonts/Across the Road.ttf");
 }
 @font-face {
+    font-family: "Cabin";
+    src: url("fonts/Cabin-Regular.otf");
+    font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: "Cabin";
+    src: url("fonts/Cabin-Italic.otf");
+    font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+    font-family: "Cabin";
+    src: url("fonts/Cabin-Bold.otf");
+    font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+    font-family: "Cabin";
+    src: url("fonts/Cabin-BoldItalic.otf");
+    font-weight: bold;
+	font-style: italic;
+}
+@font-face {
+    font-family: "Cabin";
+    src: url("fonts/Cabin-Regular.otf");
+    font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: "Cabin";
+    src: url("fonts/Cabin-Regular.otf");
+    font-weight: normal;
+	font-style: normal;
+}
+@font-face {
     font-family: 'socicon';
     src: url('fonts/socicon-webfont.eot');
     src: url('fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
@@ -36,130 +72,84 @@
 }
 body,
 html {
-    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Cabin";
 	font-size: 16px;
 	line-height: 1.2;
-	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
     padding: 0;
     margin: 0;
 }
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 
-.top:before,
-.top:after {
+.top:before, .top:after,
+.menu:before, .menu:after {
     content: " ";
     display: table;
 }
-.top:after {
+.top:after, .menu:after {
     clear: both;
 }
 .top {
     position: relative;
+    padding-bottom: 2px;
     z-index: 1;
-    background: rgba(255, 255, 0, 0.2);
+    background: rgba(250, 237, 254, 0.7); /* #FAEDFE */
     /* height: 30px; */
     border-top: 5px solid #de61fd;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .top-inner {
-    padding: 0px 20px;
-    padding-top: 5px;
+    padding: 3px 20px 0px 24px;
     position: relative;
     max-width: 1360px;
     margin: 0 auto;
 }
 
 .Login {
-    margin: 5px 10px;
-    margin-right: 0px;
-    width: 100px;
+    margin: 3px 0px 0px 5px;
+    width: 70px;
     float: right;
-    background: rgba(255, 255, 0, 0.4);
-    border: 1px solid #de61fd;
+    /*background: rgba(255, 255, 0, 0.4);*/
+}
+.login-warpper {
+     /*padding-top: 5px;*/ 
+}
+.login-warpper a {
+    display: block;
+    width: 70px;
+    height: 28px;
+    text-align: center;
+    padding-top: 3px;
+    color: #de61fd;
+    text-decoration: none;
+    /* Transitions */
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;    
+}
+.login-warpper a:hover {
+    background: #de61fd;
+    color: #FAEDFE;
+}
+.login-warpper a span {
+    font-family: initial;
+	font-size: 20px;
+	line-height: 1;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
 }
 .search-connect {
-    margin: 0px 5px;
+    margin: 3px 0px 0px 5px;
     width: 290px;
-    height: 34px;
+    height: 28px;
     float: right;
     overflow: hidden;
     /*background: rgba(255, 255, 0, 0.4);*/
 }
-.sb-search {
-    position: relative;
-    width: 0%;
-    min-width: 28px;
-    height: 28px;
-    float: right;
-    overflow: hidden;
-    
-    -webkit-transition: width 0.3s;
-    -moz-transition: width 0.3s;
-    transition: width 0.3s;
-    
-    -webkit-backface-visibility: hidden;
-}
-.sb-search-input {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 1px solid #de61fd;
-    outline: none;
-    background: #fff;
-    width: 100%;
-    height: 28px;
-    margin: 0;
-    z-index: 10;
-    padding: 9px 33px 5px 5px;
-    font-family: inherit;
-    font-size: 16px;
-    color: #000;
-}
-input[type="search"].sb-search-input {
-    -webkit-appearance: none;
-    -webkit-border-radius: 0px;
-}
-.sb-search-input::-webkit-input-placeholder {
-    color: #de61fd;
-} 
-.sb-search-input:-moz-placeholder {
-    color: #de61fd;
-}
-.sb-search-input::-moz-placeholder {
-    color: #de61fd;
-} 
-.sb-search-input:-ms-input-placeholder {
-    color: #de61fd;
-}
-.sb-icon-search, .sb-search-submit {
-    width: 28px;
-    height: 28px;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    line-height: 28px;
-    text-align: center;
-    cursor: pointer;
-}
-.sb-search-submit {
-    background: #fff; /* IE needs this */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
-    filter: alpha(opacity=0); /* IE 5-7 */
-    opacity: 0;
-    color: transparent;
-    border: none;
-    outline: none;
-    z-index: -1;
-}
-.sb-icon-search {
-    color: #fff;
-    background: #de61fd;
-    z-index: 90;
+.ct-icon-search:before {
     font-family: "icomoon";
     font-size: 18px;
     speak: none;
@@ -167,30 +157,101 @@ input[type="search"].sb-search-input {
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
+    line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
-.sb-icon-search:before{
+.ct-icon-search:before{
+    color: #FAEDFE;
     content: "\e986";
 }
-.sb-search.sb-search-open, .no-js .sb-search {
-    width: 100%;
+.ct-search {
+	position: relative;
+	float: right;
+	width: 28px;
+	height: 28px;
+	z-index: 100000;
 }
-.sb-search.sb-search-open .sb-icon-search,
-.no-js .sb-search .sb-icon-search {
+.ct-search-input-wrap {
+	position: absolute;
+	right: 28px;
+	height: 28px;
+	width: 0;
+	overflow: hidden;
+	-webkit-transition: width 200ms;
+	-moz-transition: width 200ms;
+	transition: width 200ms;
+}
+.ct-search.ct-search-open .ct-search-input-wrap {
+	width: 262px;
+}
+
+.ct-icon-search,
+input[type="submit"].ct-search-submit  {
+	width: 28px;
+	height: 28px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	line-height: 33px;
+	text-align: center;
+	cursor: pointer;
+}
+.ct-icon-search {
     background: #de61fd;
-    color: #fff;
-    z-index: 11;
+	color: #fff;
+	z-index: 90;
 }
-.sb-search.sb-search-open .sb-search-submit,
-.no-js .sb-search .sb-search-submit {
-    z-index: 90;
+.ct-search.ct-search-open .ct-icon-search{
+    background: #de61fd;
+	color: #fff;
+	z-index: 1;
+	pointer-events: none;
+}
+input[type="submit"].ct-search-submit {
+	background: transparent;
+	color: transparent;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	border-radius: 0;
+	outline: none;
+	z-index: -1;
+}
+.ct-search.ct-search-open input[type="submit"].ct-search-submit {
+	z-index: 90;
+}
+input[type="text"].ct-search-input {
+	border: 1px solid #de61fd;
+	outline: none;
+	opacity: 0;
+	background: rgba(250, 237, 254, 0.9); /* #FAEDFE */
+	width: 100%;
+	height: 28px;
+	margin: 0;
+	padding: 2px 7px;
+}
+.ct-search.ct-search-open input[type="text"].ct-search-input {
+	opacity: 1;
+}
+::-webkit-input-placeholder {
+	color: #999999;
+}
+:-moz-placeholder {
+	color: #999999;
+}
+::-moz-placeholder {
+	color: #999999;
+}
+:-ms-input-placeholder {
+	color: #999999;
 }
 .connect {
     width: 250px;
     float: right;
     margin: 0;
     padding: 0px;
-    padding-top: 7px;
+    padding-top: 5px;
     height: 27px;
     list-style: none;
 }
@@ -199,9 +260,10 @@ input[type="search"].sb-search-input {
 }
 .connect li a {
     display: block;
-	width: 34px;
+	width: 25px;
 	height: 20px;
-	margin: 0;
+	margin: 0px 6px;
+    padding: 0;
 	position: relative;
 	text-align: center;
     color: #694B73;
@@ -239,7 +301,7 @@ input[type="search"].sb-search-input {
   color: #de61fd;
 }
 .connect-icon-feed:before {
-    color: rgba(242, 97, 9, 0.25); /* #f26109; */
+    color: rgba(242, 97, 9, 0.2); /* #f26109; */
     content: ",";
     /* Transitions */
     -webkit-transition: 0.3s all ease-in-out;
@@ -326,4 +388,46 @@ input[type="search"].sb-search-input {
     -moz-osx-font-smoothing: grayscale;
     float: left;
     width: 185px;
+}
+.menu {
+    position: relative;
+    z-index: 1;
+    background: #de61fd;
+    /* height: 30px; */
+}
+.menu-inner {
+    padding: 1px 20px 0px 20px;
+    position: relative;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+.branding {
+    position: relative;
+    float: left;
+}
+.branding a {
+    display: block;
+    width: 190px;
+    height: 68px;
+    text-decoration: none; 
+}
+.branding a img {
+    position: absolute;
+    left: 0;
+    top: 0;
+     /* Transitions */
+    -webkit-transition: 0.5s all ease-in-out;
+    -moz-transition: 0.5s all ease-in-out;
+    -ms-transition: 0.5s all ease-in-out;
+    -o-transition: 0.5s all ease-in-out;
+    transition: 0.5s all ease-in-out;
+}
+.branding a img.top-logo {
+    opacity: 0;
+}
+.branding a img.top-logo:hover {
+    opacity: 1;
+}
+.branding a span {
+    display: none;
 }
