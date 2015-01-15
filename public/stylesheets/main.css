@@ -408,7 +408,7 @@ input[type="text"].ct-search-input {
 .branding a {
     display: block;
     width: 190px;
-    height: 68px;
+    height: 70px;
     text-decoration: none; 
 }
 .branding a img {
@@ -430,4 +430,8 @@ input[type="text"].ct-search-input {
 }
 .branding a span {
     display: none;
+}
+.hsmenu {
+    position: relative;
+    float: left;
 }
