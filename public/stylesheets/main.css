@@ -543,7 +543,7 @@ input[type="text"].ct-search-input {
 	clear: both; 
 }
 .cbp-hssubmenu > li {
-	width: 16.2%;
+	width: 19.4%;
 	display: inline-block;
 	vertical-align: top;
 	box-shadow: -28px 0 0 -27px #de61fd, 0 -28px 0 -27px #de61fd;
@@ -554,10 +554,10 @@ input[type="text"].ct-search-input {
     -o-transition: opacity 0.1s 0s;
 	transition: opacity 0.1s 0s;
 }
-.cbp-hssubmenu > li:nth-child(-n+6) {
+.cbp-hssubmenu > li:nth-child(-n+5) {
 	box-shadow: -28px 0 0 -27px #de61fd;
 } 
-.cbp-hssubmenu > li:nth-child(6n+1) {
+.cbp-hssubmenu > li:nth-child(5n+1) {
 	box-shadow:  0 -28px 0 -27px #de61fd;
 }
 .cbp-hssubmenu > li:first-child {
